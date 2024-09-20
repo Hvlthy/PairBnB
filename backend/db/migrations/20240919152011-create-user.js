@@ -4,6 +4,7 @@ let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
 }
+
 /** @type {import('sequelize-cli').Migration} */
 
 module.exports = {
@@ -19,14 +20,6 @@ module.exports = {
         type: Sequelize.STRING(30),
         allowNull: false,
         unique: true
-      },
-      firstName: {
-        type: Sequelize.STRING(30),
-        allowNull: true,
-      },
-      lastName:{
-        type: Sequelize.STRING(30),
-        allowNull: true,
       },
       email: {
         type: Sequelize.STRING(256),
@@ -49,9 +42,8 @@ module.exports = {
       }
     }, options);
   },
-
   async down(queryInterface, Sequelize) {
     options.tableName = "Users";
-    return queryInterface.dropTable(options);
+    await queryInterface.dropTable(options);
   }
 };
