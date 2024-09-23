@@ -30,6 +30,14 @@ module.exports = {
         type: Sequelize.STRING.BINARY,
         allowNull: false
       },
+      firstName: {  // New field added
+        type: Sequelize.STRING(50),
+        allowNull: false
+      },
+      lastName: {  // New field added
+        type: Sequelize.STRING(50),
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
