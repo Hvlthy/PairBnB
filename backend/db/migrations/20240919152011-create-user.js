@@ -21,6 +21,14 @@ module.exports = {
         allowNull: false,
         unique: true
       },
+      firstName:{
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      lastName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       email: {
         type: Sequelize.STRING(256),
         allowNull: false,
@@ -28,14 +36,6 @@ module.exports = {
       },
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
-        allowNull: false
-      },
-      firstName: {  // New field added
-        type: Sequelize.STRING(50),
-        allowNull: false
-      },
-      lastName: {  // New field added
-        type: Sequelize.STRING(50),
         allowNull: false
       },
       createdAt: {
